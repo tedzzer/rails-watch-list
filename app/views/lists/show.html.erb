@@ -12,5 +12,6 @@
     <li>
       <%= bookmark.comment %> | <%= bookmark.movie.title %>
     </li>
+    <%= link_to "delete bookmark", bookmark_path(Bookmark.find_by(list: @list)), method: :delete, data: { confirm: "Are you sure?"} %>
   <% end %>
 </ul>
