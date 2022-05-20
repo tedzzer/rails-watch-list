@@ -1,13 +1,57 @@
-<h2> Movie List </h2>
+<div class="index-background">
+
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://img2.freepng.fr/20180511/hwq/kisspng-cinema-film-logo-clip-art-5af65ddd577821.2274202915260953253583.jpg"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Share</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Settings</a>
+            </li>
+            <li class="nav-item dropdown">
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.giantbomb.com/a/uploads/square_small/46/462814/3181397-2074692822-latest"/>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+              </div>
+            </li>
+            <!--li class="nav-item"-->
+            <!--/li-->
+        </ul>
+      </div>
+    </div>
+  </div>
 
 
+  <div class="banner" style="https://img.freepik.com/free-vector/flat-moview-popcorn-background-with-film-reel_1017-36652.jpg?w=2000">
+    <div class="container">
+      <h1>Create your own<strong> custom</strong> movie list!</h1>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name, list_path(list) %>
-    </li>
-  <% end %>
-</ul>
+    </div>
+  </div>
 
-<%= link_to "Add a list", new_list_path %>
+ <div class="list-container">
+    <div class="smallheader">
+      <h2>My List</h2>
+       <p> <%= link_to 'Add List', new_list_path%></p>
+
+    </div>
+
+    <div class="cards">
+        <% @lists.each do |list| %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/photos/popcorn-spilled-from-a-paper-bucket-picture-id1311068539?b=1&k=20&m=1311068539&s=170667a&w=0&h=LRNnDk8zMnjBWhPEiyKLNTnwlOwpjzjoPGSqsZYDuPI=)">
+              <%= link_to list.name, list_path(list) %>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>

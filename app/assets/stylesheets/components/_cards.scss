@@ -1,0 +1,76 @@
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding-top: 15px;
+  padding: 5px;
+}
+
+.cards a{
+  text-decoration: none;
+  color: white;
+  font-family: monospace;
+
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.smallheader{
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.smallheader h2{
+  background-color: rgba(7, 23, 115, 0.8);
+  border-radius: 10px;
+  color: white;
+  font-family: monospace;
+  padding: 10px;
+
+}
+
+.smallheader a{
+  background-color: rgba(7, 23, 115, 0.8);
+  border-radius: 5px;
+  color: white;
+  font-family: monospace;
+  text-decoration: none;
+  padding: 10px;
+
+}
