@@ -1,17 +1,22 @@
-<h1><%= @list.name%></h1>
-<%= link_to "Back movie list", lists_path %>
-<h2><%= link_to "Delete 🔪",
-            list_path,
-            method: :delete,
-            data: { confirm: "Are you sure zebi?" } %></h2>
-
-<%= link_to "Add a movie", new_list_bookmark_path(@list)%>
-
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li>
-      <%= bookmark.comment %> | <%= bookmark.movie.title %>
-    </li>
-    <%= link_to "delete bookmark", bookmark_path(Bookmark.find_by(list: @list)), method: :delete, data: { confirm: "Are you sure?"} %>
-  <% end %>
-</ul>
+<br>
+<br>
+<br>
+<div class="container">
+  <h1><%= @list.name %></h1>
+  <div class="d-flex justify-content-between row">
+    <% @list.movies.each do |movie| %>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="<%= movie.poster_url %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%=movie.title%></h5>
+          <p class="card-text"><%=movie.overview%></p>
+          <p class="card-text"><%=movie.rating%> / 10</p>
+          <a href="#" class="btn btn-light"><%= link_to "Delete", list_path(@list), method: :delete,
+            data: { confirm: "Are you sure?" } %> </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= link_to "Back to homepage", lists_path %>
+<%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
